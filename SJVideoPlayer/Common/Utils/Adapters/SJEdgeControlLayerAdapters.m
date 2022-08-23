@@ -26,7 +26,8 @@ FOUNDATION_STATIC_INLINE BOOL
 _isIPhoneXSeries(void) {
     if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         if ( @available(iOS 11.0, *) ) {
-            UIWindow *window = [UIApplication sharedApplication].delegate.window;
+//            UIWindow *window = [UIApplication sharedApplication].delegate.window;
+            UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
             return window.safeAreaInsets.bottom > 0.0;
         }
     }
